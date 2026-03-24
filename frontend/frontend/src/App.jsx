@@ -18,7 +18,7 @@ function App() {
 
   // 1. Fetch Members when app loads
   useEffect(() => {
-    axios.get('http://localhost:5000/api/auth/members')
+    axios.get('https://abagwaneza-voting.onrender.com/api/auth/members')
       .then(res => {
         setMembers(res.data)
         if(res.data.length > 0) setSelectedName(res.data[0].fullName)
@@ -31,7 +31,7 @@ function App() {
     e.preventDefault();
     setError('');
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', {
+      const res = await axios.post('https://abagwaneza-voting.onrender.com/api/auth/login', {
         fullName: selectedName,
         pin: pin
       });

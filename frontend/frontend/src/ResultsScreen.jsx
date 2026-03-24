@@ -7,7 +7,7 @@ function ResultsScreen({ onBack }) {
 
     useEffect(() => {
         // Fetch the smart data from the backend
-        axios.get('http://localhost:5000/api/votes/results')
+        axios.get('https://abagwaneza-voting.onrender.com/api/votes/results')
             .then(res => {
                 setResults(res.data);
                 setLoading(false);

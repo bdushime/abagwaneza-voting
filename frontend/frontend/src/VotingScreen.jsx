@@ -9,7 +9,7 @@ function VotingScreen({ user, position, onBack, onVoteSuccess }) {
 
     // 1. Fetch Candidates when this screen opens
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/votes/candidates/${position._id}`)
+        axios.get(`https://abagwaneza-voting.onrender.com/api/votes/candidates/${position._id}`)
             .then(res => {
                 setCandidates(res.data);
                 setLoading(false);
@@ -29,7 +29,7 @@ function VotingScreen({ user, position, onBack, onVoteSuccess }) {
         setSubmitting(true);
 
         try {
-            await axios.post('http://localhost:5000/api/votes', {
+            await axios.post('https://abagwaneza-voting.onrender.com/api/votes', {
                 voterId: user._id,
                 position: position.title,
                 candidateId: selectedCandidate._id

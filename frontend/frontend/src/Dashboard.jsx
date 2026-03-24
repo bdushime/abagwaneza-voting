@@ -8,7 +8,7 @@ function Dashboard({ user, onLogout, onSelectPosition, onViewResults }) {
 
     // Fetch positions and voting status
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/votes/dashboard/${user._id}`)
+        axios.get(`https://abagwaneza-voting.onrender.com/api/votes/dashboard/${user._id}`)
             .then(res => {
                 setPositions(res.data);
                 setLoading(false);
